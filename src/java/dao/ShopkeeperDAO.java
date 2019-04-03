@@ -11,6 +11,7 @@ package dao;
  * @author Amit
  */
 import dto.Shopkeeper;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -35,6 +36,28 @@ public class ShopkeeperDAO {
           sf.close();
           
           return true;
+    }
+    
+    public boolean Login(Shopkeeper sk)
+    {
+        boolean b = false;
+        Configuration cf = new Configuration();
+        cf.configure();
+        
+        SessionFactory sf = cf.buildSessionFactory();
+        Session s = sf.openSession();
+        
+        Transaction tr = s.beginTransaction();
+        
+        Query q = s.createQuery("FROM Shopkeeper S WHERE S.email = :email AND S.password = :password");
+        
+        q.setParameter("email", sk.getEmail());
+        q.setParameter("password", sk.getPassword());
+        
+        if(q.executeUpdate() > 0)
+            b = true;
+        
+        return b;
     }
     
 }

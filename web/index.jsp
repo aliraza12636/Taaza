@@ -89,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                      <div class="agileits_modal_body">
                         <!--login form-->
                         <div class="letter-w3ls">
-                           <form action="#" method="post">
+                           <form action="Login" method="post">
                               
                               <div class="form-right-w3ls">
                                  <input type="email" name="email" placeholder="Email" required="">
