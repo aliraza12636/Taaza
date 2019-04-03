@@ -5,7 +5,9 @@
  */
 package controller;
 
+import dao.CustomerDAO;
 import dao.ShopkeeperDAO;
+import dto.Customer;
 import dto.Shopkeeper;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -51,6 +53,19 @@ public class Login extends HttpServlet {
                         else
                             response.sendRedirect("fail.html");
                     }
+                    else
+                    {
+                        Customer c = new Customer();
+                        c.setEmail(username);
+                        c.setPassword(pass);
+                        
+                        CustomerDAO cm = new CustomerDAO();
+                        if(cm.Login(c))
+                            response.sendRedirect("success.html");
+                        else
+                            response.sendRedirect("fail.html");
+                    }
+                        
             
             
         }

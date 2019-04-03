@@ -11,6 +11,7 @@ package dao;
  * @author Amit
  */
 import dto.Shopkeeper;
+import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -53,9 +54,15 @@ public class ShopkeeperDAO {
         
         q.setParameter("email", sk.getEmail());
         q.setParameter("password", sk.getPassword());
+        List<Shopkeeper> sklist = q.list();
         
-        if(q.executeUpdate() > 0)
-            b = true;
+        if(sklist.size() > 0)
+        b = true;
+        
+        tr.commit();
+        s.close();
+        sf.close();
+      
         
         return b;
     }
