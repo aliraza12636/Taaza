@@ -51,7 +51,7 @@ public class Login extends HttpServlet {
                         if(sd.Login(sk))
                             response.sendRedirect("success.html");
                         else
-                            response.sendRedirect("fail.html");
+                            response.sendRedirect("LoginFailedAlert.jsp");
                     }
                     else
                     {
@@ -63,7 +63,7 @@ public class Login extends HttpServlet {
                         if(cm.Login(c))
                             response.sendRedirect("success.html");
                         else
-                            response.sendRedirect("fail.html");
+                            response.sendRedirect("LoginFailedAlert.jsp");
                     }
                         
             

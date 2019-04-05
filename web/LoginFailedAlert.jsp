@@ -1,3 +1,5 @@
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,13 +13,14 @@
         out.println("<script src='js/jquery.min.js' type='text/javascript'></script>");
         out.println("<script>");
         out.println("$(document).ready(function(){");
-        out.println("swal('Good job!', 'You have been Register now u can Login!', 'success');");
+        out.println("swal('failed to Login!', 'You Have entered Wrong User Name or Password!!!', 'error');");
         out.println("});");
         out.println("</script>");
         %>
          
-       <jsp:include  page="signup_cm.html"/>
+       <jsp:include  page="index.jsp"/>
         
         
     </body>
 </html>
+

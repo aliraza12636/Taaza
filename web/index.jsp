@@ -47,13 +47,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="w3_agile_header">
 						<div class="w3_agileits_logo">
-								<h1><a href="index.html">Taaza <span><i class="fa fa-cutlery" aria-hidden="true"></i>FreshMilk</span></a></h1>
+								<h1><a href="index.jsp">Taaza <span><i class="fa fa-cutlery" aria-hidden="true"></i>FreshMilk</span></a></h1>
 							</div>
 							<div class="w3_menu">
 							<div class="agileits_w3layouts_banner_info">
-				<div class="w3_agile_phone">
-				<p><i class="fa fa-phone" aria-hidden="true"></i> +918269978689</p>
-			</div>
+				<!--<div class="w3_agile_phone">
+				<p><span><i class="fa fa-cutlery" aria-hidden="true"></i> <a href="#about" class="scroll">About</a></span></p>
+			</div>-->
 								
 							</div>
 								<div class="mobile-nav-button">
@@ -179,8 +179,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="w3ls-about-grids">
 				<div class="col-md-6 w3l-about-left">
 					<h2>Welcome</h2>
-					<h5>Integer mollis porttitor nibh</h5>
-					<p>Donec bibendum ligula sit amet auctor vulputate. Maecenas elementum, magna nec interdum venenatis, nibh enim gravida sem, id consectetur justo erat non tortor. Nam ultricies eget erat quis dapibus. Aenean eu scelerisque lacus, et fringilla odio.<span>Sed vestibulum sapien ornare ex sodales, eu feugiat ipsum tempor. Vivamus ante orci, congue sit amet aliquam non, sagittis eget justo. Curabitur mollis hendrerit nunc, id luctus sem vestibulum id.</span></p>
+					<h5>TAAZA THE MILK DELIVERY SERVICE!!</h5>
+					<p>We are a bunch of smart and young people, who, like you, are consumers of
+                                            daily essential - milk, bread, butter, cheese, curd, paneer. We also know that regularly 
+                                            running out of these daily needs items is not fun!
+                                            <span> We do not like waking up on a  morning with no milk in the fridge, or preparing an omelette with no bread. Using Taaza has made our own lives easier,
+                                                so we know that it will certainly make your essential deliveries hassle free and punctual as well.
+                                               </span><span> We make your mornings happier and healthier.</span></p>
 				</div>
 				<div class="col-md-6 w3l-about-img">
 				<img src="images/ab3.jpg" alt="image">
@@ -346,8 +351,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<img class="img-responsive" src="images/p2.jpg" alt="">
 					</div>
 					<div class="team-right">
-						<h4>Vivamus lias</h4>
-						<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias </p>
+						<h4>Amit Kumar Choudhary</h4></br>
+						<!--<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias </p> -->
 						<div class="social-icon">
 							<a href="#" class="social-button twitter"><i class="fa fa-twitter"></i></a>
 							<a href="#" class="social-button facebook"><i class="fa fa-facebook"></i></a> 
@@ -362,8 +367,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<img class="img-responsive" src="images/p1.jpg" alt="">
 					</div>
 					<div class="team-right">
-						<h4>Aliquam fauc </h4>
-						<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias </p>
+						<h4>Ali Raza Mansuri </h4></br>
+						<!--<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias </p>-->
 						<div class="social-icon">
 							<a href="#" class="social-button twitter"><i class="fa fa-twitter"></i></a>
 							<a href="#" class="social-button facebook"><i class="fa fa-facebook"></i></a> 
@@ -381,8 +386,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<img class="img-responsive" src="images/p3.jpg" alt="">
 					</div>
 					<div class="team-right">
-						<h4>Donec nibh </h4>
-						<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias </p>
+						<h4>Harshit Sisodiya </h4></br>
+						<!--<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias </p>-->
 						<div class="social-icon">
 							<a href="#" class="social-button twitter"><i class="fa fa-twitter"></i></a>
 							<a href="#" class="social-button facebook"><i class="fa fa-facebook"></i></a> 
@@ -392,7 +397,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="clearfix"> </div>
 				</div>
-				<div class="col-md-6 team-w3lsgrids">
+				<!--<div class="col-md-6 team-w3lsgrids">
 					<div class="team-left">
 						<img class="img-responsive" src="images/p4.jpg" alt="">
 					</div>
@@ -409,21 +414,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"> </div>
 				</div>
 				<div class="clearfix"> </div>
-			</div>
+			</div>-->
 		</div>
 	</div>
 	<!-- //team --> 
 
 <!-- services -->
-<div class="w3-orders services" id="services">
+<!--<div class="w3-orders services" id="services">
 		<div class="container">
 		<div class="w3-order-heading">
 			<h3 data-aos="zoom-in" >place <span>order</span></h3>
 		</div>
-			<div class="w3-agileits-services-grids">
+			<div class="w3-agileits-services-grids">-->
 				<!-- main -->
 				<!--main-->
-<div class="main-w3l">
+<!--<div class="main-w3l">
 	<div class="col-md-6 banner-right-agile">
 			<div class="banner-text">
 				<h3>Order <span>now</span></h3>
@@ -441,10 +446,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</select>
 							<i></i>
 						</label>
-					</div>
+					</div> -->
 
 					<!-- start country -->
-					<div class="main-row">
+					 <!-- <div class="main-row">
 						<label class="input select">
 							<select name="country">
 								<option value="none" selected="" disabled="">Select peices</option>
@@ -457,19 +462,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</select>
 							<i></i>
 						</label>
-					</div>
+					</div> -->
 					<!-- end country -->
-					<input type="submit" value="Submit">
+					<!--<input type="submit" value="Submit">
 				</form>
 			</div>
 	</div>
-</div>
+</div>-->
 <!--//main-->
 
 	
 	<!-- //main -->
 
-				<div class="col-md-6 w3-agile-services-right">
+		<!--		<div class="col-md-6 w3-agile-services-right">
 				
 						<img src="images/1431.jpg" alt="" />
 					</div>					<div class="clearfix"> </div>
@@ -481,7 +486,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //services -->
 
 
-testimonial
+
 <!-- <div class="testimonial" id="testimonials"> -->
 		<!-- <div class="container"> -->
 		<!-- <div class="test-heading"> -->
@@ -556,8 +561,8 @@ testimonial
 				<div class="col-md-6 agile-contact-left">
 					<div class="contact-form">
 						<h4>Contact Form</h4>
-						<p>Donec feugiat tellus sem, laoreet iaculis orci lobortis vel. Sed sed luctus orci, elit vitae, 
-												at lacinia risus.</p>
+						<p>FOr any query plz Contact Us.
+												</p>
 						<form action="#" method="post">
 							<div class="styled-input agile-styled-input-top">
 								<input type="text" name="Name" required="">
@@ -596,8 +601,8 @@ testimonial
 		<div class="footer-nav">
 			<ul>
 				<li><a href="#home" class="scroll">Home</a></li>
-				<li><a href="login.html"  >Login</a></li>
-				<li><a href="login.html"  >Signup</a></li>
+				<li><a href="#small-dialog1 " class="play-icon popup-with-zoom-anim"  >Login</a></li>
+				
 				
 				<!-- <li><a href="#ourmenu" class="scroll">Menu</a></li> -->
 				<li><a href="#team" class="scroll">Team</a></li>
