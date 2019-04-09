@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 	<head>
 		<title>Shop Homepage</title>
 
@@ -15,6 +15,19 @@
 		<link href='./css/style1.css' rel='stylesheet' />
 
 		<script src='./js/bootstrap.js'></script>
+                
+                  <script>
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+      </script>
+      <!-- Meta tags -->
+      <!--pop-ups-->
+      <link href="css/popuo-box1.css" rel="stylesheet" type="text/css" media="all" />
+      <!-- //pop-ups-->
+      <!--//style sheet end here-->
+      <link href="//fonts.googleapis.com/css?family=Barlow:300,400,500" rel="stylesheet">
+      <!--<link href="css/login.css" rel='stylesheet' type='text/css' media="all">-->
+      <!--//style sheet end here-->
+    
 	</head>
 	<body>
 		<div class = 'container' id='mycontainer'>
@@ -62,19 +75,72 @@
 						<tr>
 							
 						</tr>
-					</table>
-						<button class='btn btn-default' id ='mybtn'>Add item</button>
-						<button class='btn btn-default' id ='mybtn'>Edit</button>
+					</table> 
+						 <button class='btn btn-default' id ='mybtn'><a href="#small-dialog1 " class="play-icon popup-with-zoom-anim">Add item</a></button>
+                                                <button class='btn btn-default' id ='mybtn'><a href="#small-dialog2 " class="play-icon popup-with-zoom-anim">Delete</a></button></div>
 					</center>
+                                <div id="small-dialog1" class="mfp-hide w3ls_small_dialog wthree_pop">
+                     <div class="agileits_modal_body">
+                        <!--login form-->
+                        <div class="letter-w3ls">
+						
+                           <form action="" method="post">
+                              
+                              <div class="form-left-to-w3l">
+                                 <input type="text" name="itemname" placeholder="Product Name" required="">
+                              </div>
+                              <div class="form-left-to-w3l ">
+                                 <input type="text" name="prize" placeholder="Prize" required="">
+                              </div>
+								 <div class="form-left-to-w3l"></br>
+                                 <input type="radio" name="usertype" value ='kg' required="">Quantity(Kg) &nbsp; &nbsp;&nbsp;
+								 <input type="radio" name="usertype" value ='lt' required="">Quantity(Lt.)
+									
+                              </div>
+								
+					<!--		  <div class="form-left-to-w3l"></br>
+                                <a href ="" > Forget Password  </a>
+                              </div>-->
+                              <div class="btnn"><center>
+                                 <button type="submit">ADD</button><br></center>
+                              </div>
+                           </form>
+                           <div class="clear"></div>
+                        </div>
+                        <!--//login form-->
+                     </div>
+                  </div>
+               </div>
 				</div>
 				
 				
 			</div>
+             <script src='js/jquery-2.2.3.min.js'></script>
+    
+             <script src="js/jquery.magnific-popup.js"></script>
+      <!-- //pop-up-box -->
+      <script>
+         $(document).ready(function () {
+         	$('.popup-with-zoom-anim').magnificPopup({
+         		type: 'inline',
+         		fixedContentPos: false,
+         		fixedBgPos: true,
+         		overflowY: 'auto',
+         		closeBtnInside: true,
+         		preloader: false,
+         		midClick: true,
+         		removalDelay: 300,
+         		mainClass: 'my-mfp-zoom-in'
+         	});
+         
+         });
+      </script>
+      <!-- //pop-up-box -->
 		
 		
 		
 		
-		</div>
+		
 	</body>
 </html>
 
