@@ -1,0 +1,65 @@
+
+ #mycontainer
+ {
+   min-height:670px;
+ }
+ #header
+ {
+   min-height:150px;
+   background-color:#BFDB39;
+   color:#f16121;
+   
+ }
+  #header h4
+ {
+   
+   color:white;
+   
+ }
+ #nav
+ {
+   min-height:50px;
+   background-color:lightcyan;
+   
+ }
+ #menuul
+ {
+ }
+ #menuul li
+ {
+   font-weight:bold;
+   font-size:20px;
+   margin:5px 20px 5px 100px;
+ }
+ #menuul li a
+ {
+   color:black;
+   text-decoration:none;
+ }
+ #menuul li a:hover
+ {
+
+   background-color:#f16121;
+   color:white;
+ }
+ #content
+ {
+   min-height:380px;
+ }
+ #footer
+ {
+   min-height:80px;
+   background-color:orange;
+ }
+ #mybtn
+ {
+	font-weight:bold;
+	
+ }
+ #mybadge
+ {
+	font-weight:bold;
+	color:white;
+	background-color:red;
+ }
+ 
