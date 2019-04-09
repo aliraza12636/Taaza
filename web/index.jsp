@@ -26,7 +26,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //js -->
  <script>
          addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
-      </script>
+           </script>
 <!--pop-ups-->
       <link href="css/popuo-box1.css" rel="stylesheet" type="text/css" media="all" />
       <!-- //pop-ups-->
@@ -89,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                      <div class="agileits_modal_body">
                         <!--login form-->
                         <div class="letter-w3ls">
-                           <form action="Login" method="post">
+                           <form action="Login" method="post" >
                               
                               <div class="form-right-w3ls">
                                  <input type="email" name="email" placeholder="Email" required="">
@@ -711,7 +711,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 <!-- //menu -->
  <script src="js/jquery.magnific-popup.js"></script>
-!-- //pop-up-box -->
+<!-- //pop-up-box -->
       <script>
          $(document).ready(function () {
          	$('.popup-with-zoom-anim').magnificPopup({
