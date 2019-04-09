@@ -1,15 +1,18 @@
+<%-- 
+    Document   : shop
+    Created on : Apr 9, 2019, 5:03:55 PM
+    Author     : Ali Raza
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
 	<head>
 		<title>Shop Homepage</title>
 
 		<link href='./css/bootstrap.css' rel='stylesheet'/>
-		<link href='./css/style1.css' rel='stylesheet'/>
+		<link href='./css/style1.css' rel='stylesheet' />
 
 		<script src='./js/bootstrap.js'></script>
 	</head>
@@ -74,3 +77,4 @@ and open the template in the editor.
 		</div>
 	</body>
 </html>
+
