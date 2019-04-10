@@ -11,6 +11,7 @@ package dao;
  * @author Amit
  */
 import dto.Shopkeeper;
+import dto.Additem;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -66,5 +67,47 @@ public class ShopkeeperDAO {
         
         return b;
     }
+     public boolean addItem(Additem ai){
+    
+        Configuration config =  new Configuration();
+          config.configure();
+          
+          SessionFactory sf = config.buildSessionFactory();
+          
+          Session s = sf.openSession();
+          
+          Transaction tr = s.beginTransaction();
+             
+          s.save(ai);
+          
+          tr.commit();
+          s.close();
+          sf.close();
+          
+          return true;
+    }
+    public int deleteItem(Additem ai1){
+    
+        Configuration config =  new Configuration();
+          config.configure();
+          
+          SessionFactory sf = config.buildSessionFactory();
+          
+          Session s = sf.openSession();
+          
+          Transaction tr = s.beginTransaction();
+          
+          String hql = "DELETE FROM Additem WHERE itemname = :itemname";
+            Query query = s.createQuery(hql);
+            query.setParameter("itemname", ai1.getItemname());
+            int result = query.executeUpdate();
+          
+          tr.commit();
+          s.close();
+          sf.close();
+          
+          return result;
+    }
+
     
 }

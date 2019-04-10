@@ -4,6 +4,8 @@
     Author     : Ali Raza
 --%>
 
+<%@page import="dao.ShopkeeperDAO"%>
+<%@page import="dto.Additem"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -85,7 +87,7 @@
                         <!--login form-->
                         <div class="letter-w3ls">
 						
-                           <form action="" method="post">
+                           <form action="shop.jsp" method="post">
                               
                               <div class="form-left-to-w3l">
                                  <input type="text" name="itemname" placeholder="Product Name" required="">
@@ -94,8 +96,8 @@
                                  <input type="text" name="prize" placeholder="Prize" required="">
                               </div>
 								 <div class="form-left-to-w3l"></br>
-                                 <input type="radio" name="usertype" value ='kg' required="">Quantity(Kg) &nbsp; &nbsp;&nbsp;
-								 <input type="radio" name="usertype" value ='lt' required="">Quantity(Lt.)
+                                 <input type="radio" name="itype" value ='kg' required="">Quantity(Kg) &nbsp; &nbsp;&nbsp;
+								 <input type="radio" name="itype" value ='lt' required="">Quantity(Lt.)
 									
                               </div>
 								
@@ -116,10 +118,10 @@
                         <!--login form-->
                         <div class="letter-w3ls">
 						
-                           <form action="" method="post">
+                           <form action="shop.jsp" method="post">
                               
                               <div class="form-left-to-w3l">
-                                 <input type="text" name="itemname" placeholder="Product Name" required="">
+                                 <input type="text" name="itname" placeholder="Product Name" required="">
                               </div>
                               								
 					<!--		  <div class="form-left-to-w3l"></br>
@@ -160,10 +162,54 @@
          });
       </script>
       <!-- //pop-up-box -->
+      <%
+	  String uid=null ,itemname = null, prize = null,type= null ;
+            
+                Additem ai = new Additem();
+              
+                uid = "sgdd" ;
+                ai.setEmail(uid);
+                
+                itemname = request.getParameter("itemname");
+                ai.setItemname(itemname);
+                
+                prize = request.getParameter("prize");
+                ai.setPrize(prize);
+                
+                type = request.getParameter("itype");
+                ai.setQuantity(type);
+                
+                ShopkeeperDAO sd = new ShopkeeperDAO();
+                if(prize !=null){
+                boolean b = sd.addItem(ai);
+                if(b){
+                       out.println("<font color=red>Record Inserted...........</font>");
+                    
+                     }
+            
+            }
+                  
 		
 		
 		
-		
+                            String itname = null;
+                            
+                            itname = request.getParameter("itname");
+                                ai.setItemname(itname);
+                              if(itname!=null){
+                
+                                     int i = sd.deleteItem(ai);
+                 
+                                           if(i>0){
+                 
+                                                  out.println("<font color=red>Record deleted...........</font>");
+                                                      }else{
+                                             
+                                           }
+                                     }
+                             
+                
+                %>
 		
 	</body>
 </html>

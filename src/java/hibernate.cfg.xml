@@ -11,5 +11,6 @@
     <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping class="dto.Shopkeeper"/>
     <mapping class="dto.Customer"/>
+    <mapping class="dto.Additem"/>
   </session-factory>
 </hibernate-configuration>
