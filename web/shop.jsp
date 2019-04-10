@@ -22,6 +22,7 @@
       <!-- Meta tags -->
       <!--pop-ups-->
       <link href="css/popuo-box1.css" rel="stylesheet" type="text/css" media="all" />
+      <link href="css/daiolof2pop.css" rel="stylesheet" type="text/css" media="all" />
       <!-- //pop-ups-->
       <!--//style sheet end here-->
       <link href="//fonts.googleapis.com/css?family=Barlow:300,400,500" rel="stylesheet">
@@ -103,6 +104,29 @@
                               </div>-->
                               <div class="btnn"><center>
                                  <button type="submit">ADD</button><br></center>
+                              </div>
+                           </form>
+                           <div class="clear"></div>
+                        </div>
+                        <!--//login form-->
+                     </div>
+                  </div>
+                                 <div id="small-dialog2" class="mfp-hide w3ls_small_dialog wthree_pop">
+                     <div class="agileits_modal_body">
+                        <!--login form-->
+                        <div class="letter-w3ls">
+						
+                           <form action="" method="post">
+                              
+                              <div class="form-left-to-w3l">
+                                 <input type="text" name="itemname" placeholder="Product Name" required="">
+                              </div>
+                              								
+					<!--		  <div class="form-left-to-w3l"></br>
+                                <a href ="" > Forget Password  </a>
+                              </div>-->
+                              <div class="btnn"><center>
+                                 <button type="submit">DELETE</button><br></center>
                               </div>
                            </form>
                            <div class="clear"></div>

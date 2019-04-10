@@ -34,6 +34,9 @@ public class Customer {
     @Column (name = "city")
     private String city;
     
+    @Column (name = "address")
+    private String address;
+    
     @Column (name = "password")
     private String password;
 
@@ -46,6 +49,14 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getName() {

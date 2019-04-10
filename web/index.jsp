@@ -128,8 +128,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li>
 								<div class="wthree_banner_info_grid">
 								
-								<h3>Taaza The Milk DELIVERY SERVICE</h3>
-								<p>Welcome to Taaza Delivery, a place where you can order Pure and FreshMilk at affordable price. We are glad to offer you the best Milk in the area to everyone.</p>
+								<h3 style="color:#f16121">Taaza The Milk DELIVERY SERVICE</h3>
+								<p style="color:olivedrab">Welcome to Taaza Delivery, a place where you can order Pure and FreshMilk at affordable price. We are glad to offer you the best Milk in the area to everyone.</p>
 								
 									
 								</div>
@@ -137,16 +137,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li>
 								<div class="wthree_banner_info_grid">
 								
-									<h3>Pure Milk </h3>
-									<p>Welcome to Taaza Delivery, a place where you can order Pure and FreshMilk at affordable price. We are glad to offer you the best Milk in the area to everyone.</p>
+                                                                    <h3 style="color:#f16121">Pure Milk </h3>
+									<p style="color:olivedrab">Welcome to Taaza Delivery, a place where you can order Pure and FreshMilk at affordable price. We are glad to offer you the best Milk in the area to everyone.</p>
 									
 								</div>
 							</li>
 							<li>
 								<div class="wthree_banner_info_grid">
 								
-									<h3>FreshMilk Only</h3>
-									<p>Welcome to Taaza Delivery, a place where you can order Pure and FreshMilk at affordable price. We are glad to offer you the best Milk in the area to everyone.</p>
+									<h3 style="color:#f16121">FreshMilk Only</h3>
+									<p style="color:olivedrab">Welcome to Taaza Delivery, a place where you can order Pure and FreshMilk at affordable price. We are glad to offer you the best Milk in the area to everyone.</p>
 									
 								</div>
 							</li>
@@ -188,7 +188,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                </span><span> We make your mornings happier and healthier.</span></p>
 				</div>
 				<div class="col-md-6 w3l-about-img">
-				<img src="images/ab3.jpg" alt="image">
+				<img src="images/ab3.jpeg" alt="image">
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -348,7 +348,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="team-info wthree">
 				<div class="col-md-6 team-w3lsgrids">
 					<div class="team-left">
-						<img class="img-responsive" src="images/p2.jpg" alt="">
+						<img class="img-responsive" src="images/p2.png" alt="">
 					</div>
 					<div class="team-right">
 						<h4>Amit Kumar Choudhary</h4></br>

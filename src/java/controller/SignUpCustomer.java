@@ -38,7 +38,7 @@ public class SignUpCustomer extends HttpServlet {
         PrintWriter out = response.getWriter();
         try  {
             
-             String name,mobile,pass,email,city;
+             String name,mobile,pass,email,city,address;
            
             Customer cm = new Customer();
              name = request.getParameter("name");
@@ -53,6 +53,9 @@ public class SignUpCustomer extends HttpServlet {
                              
                 city = request.getParameter("city");
                   cm.setCity(city);
+                
+                 address = request.getParameter("address");
+                  cm.setAddress(address);
                   
                   pass = request.getParameter("password");
                    cm.setPassword(pass);

@@ -49,7 +49,7 @@ public class Login extends HttpServlet {
                         
                         ShopkeeperDAO sd = new ShopkeeperDAO();
                         if(sd.Login(sk))
-                            response.sendRedirect("success.html");
+                            response.sendRedirect("shop.jsp");
                         else
                             response.sendRedirect("LoginFailedAlert.jsp");
                     }
@@ -61,7 +61,7 @@ public class Login extends HttpServlet {
                         
                         CustomerDAO cm = new CustomerDAO();
                         if(cm.Login(c))
-                            response.sendRedirect("success.html");
+                            response.sendRedirect("customer.jsp");
                         else
                             response.sendRedirect("LoginFailedAlert.jsp");
                     }

@@ -294,7 +294,7 @@ flex-basis:50%;
 text-align: center;
 background: #ffffff;
 }
-.form-left-to-w3l input[type="text"], .form-left-to-w3l input[type="password"], .form-right-w3ls input[type="password"], .form-right-w3ls input[type="email"] {
+.form-left-to-w3l textArea, input[type="text"], .form-left-to-w3l input[type="password"], .form-right-w3ls input[type="password"], .form-right-w3ls input[type="email"] {
 width: 100%;
 color: #000;
 outline: none;
@@ -435,7 +435,7 @@ font-size: 50px;
 .art-right-w3ls h2 {
 font-size: 31px;
 }
-.form-left-to-w3l input[type="text"], .form-left-to-w3l input[type="password"], .form-left-to-w3l select, 
+.form-left-to-w3l textarea, input[type="text"], .form-left-to-w3l input[type="password"], .form-left-to-w3l select, 
 .form-right-w3ls input[type="password"], .form-right-w3ls input[type="email"] {
 padding: 0.8em 0em;
 margin: 0px 0px 16px;
@@ -495,7 +495,7 @@ line-height: 27px;
 .art-bothside {
 width: 86%;
 }
-.form-left-to-w3l input[type="text"], .form-left-to-w3l input[type="password"], 
+.form-left-to-w3l textarea, input[type="text"], .form-left-to-w3l input[type="password"], 
 .form-right-w3ls input[type="password"], .form-right-w3ls input[type="email"] {
 margin: 0px 0px 14px;
 }
