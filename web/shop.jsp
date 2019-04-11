@@ -4,8 +4,8 @@
     Author     : Ali Raza
 --%>
 
+<%@page import="dto.Item"%>
 <%@page import="dao.ShopkeeperDAO"%>
-<%@page import="dto.Additem"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -163,12 +163,15 @@
       </script>
       <!-- //pop-up-box -->
       <%
-	  String uid=null ,itemname = null, prize = null,type= null ;
+	  String uid=null ,itemname = null, prize = null,type= null , shop_name = null ;
             
-                Additem ai = new Additem();
+                Item ai = new Item();
               
                 uid = "sgdd" ;
                 ai.setEmail(uid);
+                
+               shop_name = "akkshop";
+                ai.setShop_name(shop_name);
                 
                 itemname = request.getParameter("itemname");
                 ai.setItemname(itemname);

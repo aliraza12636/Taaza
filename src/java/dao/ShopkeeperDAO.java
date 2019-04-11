@@ -11,7 +11,7 @@ package dao;
  * @author Amit
  */
 import dto.Shopkeeper;
-import dto.Additem;
+import dto.Item;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -30,14 +30,21 @@ public class ShopkeeperDAO {
           Session s = sf.openSession();
           
           Transaction tr = s.beginTransaction();
-             
-          s.save(sk);
+         try{    
+                  s.save(sk);
+                  tr.commit();
+                  s.close();
+                  sf.close();
+                return true;
+         }catch(Exception e){
+         
+             return false;
+         
+         }
           
-          tr.commit();
-          s.close();
-          sf.close();
+         
           
-          return true;
+     
     }
     
     public boolean Login(Shopkeeper sk)
@@ -67,7 +74,7 @@ public class ShopkeeperDAO {
         
         return b;
     }
-     public boolean addItem(Additem ai){
+     public boolean addItem(Item ai){
     
         Configuration config =  new Configuration();
           config.configure();
@@ -86,7 +93,7 @@ public class ShopkeeperDAO {
           
           return true;
     }
-    public int deleteItem(Additem ai1){
+    public int deleteItem(Item ai1){
     
         Configuration config =  new Configuration();
           config.configure();

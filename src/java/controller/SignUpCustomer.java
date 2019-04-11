@@ -64,6 +64,8 @@ public class SignUpCustomer extends HttpServlet {
                    boolean b = cd.signUpCustomer(cm);
                    if(b){
                         response.sendRedirect("regsuccesscm.jsp");
+                   }else{
+                        response.sendRedirect("Alreadysingup.jsp");
                    }
 
             

@@ -31,14 +31,18 @@ public class CustomerDAO {
           Session s = sf.openSession();
           
           Transaction tr = s.beginTransaction();
-             
+          try{
           s.save(cm);
           
           tr.commit();
           s.close();
           sf.close();
           
-          return true;
+          return true;}
+          
+          catch(Exception e){
+                return false;
+          }
     }
      public boolean Login(Customer cm)
     {

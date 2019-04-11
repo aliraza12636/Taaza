@@ -65,6 +65,8 @@ public class SignUpShopkeeper extends HttpServlet {
                    boolean b = sd.signUpShopkeeper(sk);
                    if(b){
                         response.sendRedirect("regsuccess.jsp");
+                   }else{
+                        response.sendRedirect("Alreadysingup.jsp");
                    }
                  
         } 

@@ -16,9 +16,9 @@ import javax.persistence.Table;
  * @author Amit
  */
 @Entity
-@Table(name = "additem")
+@Table(name = "item")
 
-public class Additem {
+public class Item {
  
      @Id
      @Column (name = "email")
@@ -32,8 +32,19 @@ public class Additem {
    
     @Column (name = "quantity")
     private String quantity;
+    
+    @Column (name = "shop_name")
+    private String shop_name;
 
-    public Additem() {
+    public String getShop_name() {
+        return shop_name;
+    }
+
+    public void setShop_name(String shop_name) {
+        this.shop_name = shop_name;
+    }
+
+    public Item() {
     }
 
     public String getEmail() {
