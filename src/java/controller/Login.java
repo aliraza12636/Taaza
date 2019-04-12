@@ -15,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -39,6 +40,7 @@ public class Login extends HttpServlet {
                     String username,pass,type;
                     
                     username = request.getParameter("email");
+                      HttpSession session = request.getSession();
                     pass = request.getParameter("password");
                     type = request.getParameter("usertype");
                     if(type.equals("sp"))
@@ -48,8 +50,9 @@ public class Login extends HttpServlet {
                         sk.setPassword(pass);
                         
                         ShopkeeperDAO sd = new ShopkeeperDAO();
-                        if(sd.Login(sk))
-                            response.sendRedirect("shop.jsp");
+                        if(sd.Login(sk)){
+                              session.setAttribute("email", username);
+                            response.sendRedirect("shop.jsp");}
                         else
                             response.sendRedirect("LoginFailedAlert.jsp");
                     }

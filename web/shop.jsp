@@ -6,15 +6,16 @@
 <!DOCTYPE html>
 
 <%
-    if(session.getAttribute("email")==null)
+    if(session==null)
     {
         response.sendRedirect("signout.jsp");
     }
-    ShopkeeperDAO sd1 = new ShopkeeperDAO();
-    String email = session.getAttribute("email").toString();
-    Shopkeeper s = sd1.getShopkeeperData(email);
+         ShopkeeperDAO sd1 = new ShopkeeperDAO();
+         String uid1 ;
+         uid1=     session.getAttribute("email").toString();
+         Shopkeeper s = sd1.getShopkeeperData(uid1);
     
-   session.setAttribute("sobj", s);
+         session.setAttribute("sobj", s);
     
     
 %>
@@ -55,7 +56,7 @@
 				
 				<div class='col-sm-8'>
 				<center>
-					<h1><%=s.getShop_name() %></h1>
+					<<h1><%=s.getShop_name() %></h1>
 						<h4>a partner of Taaza</h4>
 				</center>
 				</div> 
@@ -72,7 +73,8 @@
 						<li><a href=''>Orders &nbsp;<span class = 'badge' id = 'mybadge' >1</span></a></li>
 						<li><a href=''>Permanent Users</a></li>
 					</ul>
-					<button class='btn btn-default' id ='signoutbtn'>Sign Out</button>
+					  <FORM action="signout.jsp" method="post"><button type='submit' class='btn btn-default' id ='signoutbtn'>Sign Out</button></FORM>
+		
 				</div>
 			</div>
 			

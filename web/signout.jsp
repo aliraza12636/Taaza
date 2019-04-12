@@ -8,13 +8,7 @@
     {
         session.setAttribute("email",null);
         session=null;
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("LoginFailedAlert.jsp");
     }
 
 %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<%@include file="index.jsp"%>
-<script language="javascript">
-    document.getElementById("invalidlogin").innerHTML="<center>You Must login first!</center>";
-</script>
