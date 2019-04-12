@@ -4,11 +4,11 @@
     Author     : Ali Raza
 --%>
 <%
-    if(session.getAttribute("email")!=null)
-    {
-        session.setAttribute("email",null);
-        session=null;
+        
+            session.invalidate();
+            
+    
         response.sendRedirect("LoginFailedAlert.jsp");
-    }
+    
 
 %>

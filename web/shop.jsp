@@ -6,16 +6,15 @@
 <!DOCTYPE html>
 
 <%
-    if(session==null)
-    {
-        response.sendRedirect("signout.jsp");
-    }
-         ShopkeeperDAO sd1 = new ShopkeeperDAO();
          String uid1 ;
-         uid1=     session.getAttribute("email").toString();
-         Shopkeeper s = sd1.getShopkeeperData(uid1);
-    
-         session.setAttribute("sobj", s);
+         uid1=   (String)  session.getAttribute("email");
+         if(uid1== null)
+          {
+            response.sendRedirect("index.jsp");
+          }
+          ShopkeeperDAO sd1 = new ShopkeeperDAO();
+          Shopkeeper s = sd1.getShopkeeperData(uid1);
+          session.setAttribute("sobj", s);
     
     
 %>
