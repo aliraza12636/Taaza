@@ -1,13 +1,23 @@
-<%-- 
-    Document   : shop
-    Created on : Apr 9, 2019, 5:03:55 PM
-    Author     : Ali Raza
---%>
 
 <%@page import="dto.Item"%>
+<%@page import="dto.Shopkeeper"%>
 <%@page import="dao.ShopkeeperDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%
+    if(session.getAttribute("email")==null)
+    {
+        response.sendRedirect("signout.jsp");
+    }
+    ShopkeeperDAO sd1 = new ShopkeeperDAO();
+    String email = session.getAttribute("email").toString();
+    Shopkeeper s = sd1.getShopkeeperData(email);
+    
+   session.setAttribute("sobj", s);
+    
+    
+%>
 
 <html lang="en">
 	<head>
@@ -45,7 +55,7 @@
 				
 				<div class='col-sm-8'>
 				<center>
-					<h1>name of the shop</h1>
+					<h1><%=s.getShop_name() %></h1>
 						<h4>a partner of Taaza</h4>
 				</center>
 				</div> 

@@ -116,5 +116,41 @@ public class ShopkeeperDAO {
           return result;
     }
 
+
     
+    public Shopkeeper getShopkeeperData(String email)
+    {
+         Configuration config =  new Configuration();
+          config.configure();
+          
+          SessionFactory sf = config.buildSessionFactory();
+          
+          Session s = sf.openSession();
+          
+          Transaction tr = s.beginTransaction();
+          
+          String hql = "FROM Shopkeeper WHERE email = :email";
+            Query query = s.createQuery(hql);
+            query.setParameter("email", email);
+           List<Shopkeeper> sklist = query.list();
+        
+        Shopkeeper sk1 = new Shopkeeper();
+         if(sklist.size() > 0) 
+        for(Shopkeeper sk :sklist)
+        {
+           sk1 = sk;
+        }
+         tr.commit();
+        s.close();
+        sf.close();
+        
+         if(sk1 != null)
+         return sk1;
+         
+         else return null;
+        
+        
+    }
+              
 }
+
