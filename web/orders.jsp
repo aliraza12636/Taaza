@@ -15,13 +15,14 @@
           ShopkeeperDAO sd1 = new ShopkeeperDAO();
           Shopkeeper s = sd1.getShopkeeperData(uid1);
           session.setAttribute("sobj", s);
+          sd1.newOrders(uid1, 0);
     
     
 %>
 
 <html lang="en">
 	<head>
-		<title>Shop Homepage</title>
+		<title>Orders</title>
 
 		<link href='./css/bootstrap.css' rel='stylesheet'/>
 		<link href='./css/style1.css' rel='stylesheet' />
@@ -69,7 +70,7 @@
 					<!-- modify badge using jsp -->
 						
 						<li><a href='shop.jsp'>Manage Shop</a></li>
-						<li><a href='orders.jsp'>Orders &nbsp;<span class = 'badge' id = 'mybadge' ><%=s.getOrder() %></span></a></li>
+						<li><a href='orders.jsp'>Orders</a></li>
 						<li><a href='permanent_users.jsp'>Permanent Users</a></li>
 					</ul>
 					  <FORM action="signout.jsp" method="post"><button type='submit' class='btn btn-default' id ='signoutbtn'>Sign Out</button></FORM>
@@ -82,9 +83,10 @@
 				</br>
 					<center>
 					<table class ='table' id = 'mytable' border = '1'>
-						<th>Name</th>
-						<th>unit</th>
-						<th>Price per unit</th>
+						<th>Item</th>
+						<th>Quantity</th>
+						<th>Amount to receive</th>
+                                                <th>Status</th>
 						<!-- modify using js-->
 						<tr>
 							
@@ -178,14 +180,13 @@
             
                 Item ai = new Item();
               
-                uid = s.getEmail() ;
+                uid = "sgdd" ;
                 ai.setEmail(uid);
                 
-               shop_name = s.getShop_name();
+               shop_name = "akkshop";
                 ai.setShop_name(shop_name);
                 
                 itemname = request.getParameter("itemname");
-                itemname = itemname.toUpperCase();
                 ai.setItemname(itemname);
                 
                 prize = request.getParameter("prize");

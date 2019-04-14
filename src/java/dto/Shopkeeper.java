@@ -26,6 +26,17 @@ public class Shopkeeper {
     @Column (name = "name")
     private String name;
     
+    @Column (name = "orders")
+    private int order;
+
+    public int getOrder() {
+        return order;
+    }
+
+    public void setOrder(int order) {
+        this.order = order;
+    }
+    
    
     @Column (name = "mobile")
     private String mobile;

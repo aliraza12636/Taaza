@@ -151,6 +151,42 @@ public class ShopkeeperDAO {
         
         
     }
+    
+    public void newOrders(String email ,int orders){
+    
+        Configuration config =  new Configuration();
+          config.configure();
+          
+          SessionFactory sf = config.buildSessionFactory();
+          
+          Session s = sf.openSession();
+          
+          Transaction tr = s.beginTransaction();
+          
+          if(orders !=0)
+          {
+              Query q1 = s.createQuery("FROM Shopkeeper S WHERE S.email = :email");
+        
+        q1.setParameter("email", email);
+   
+        List<Shopkeeper> sklist = q1.list();
+           Shopkeeper ss =  sklist.get(0);
+            int ord = ss.getOrder();
+                orders = ord+1;
+          }
+          
+          String hql = "UPDATE Shopkeeper S set S.order = :order WHERE S.email = :email";
+            Query query = s.createQuery(hql);
+            query.setParameter("order", orders);
+            query.setParameter("email", email);
+            int result = query.executeUpdate();
+          
+          tr.commit();
+          s.close();
+          sf.close();
+          
+          
+    }
               
 }
 

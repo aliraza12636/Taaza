@@ -64,7 +64,9 @@ public class Login extends HttpServlet {
                         
                         CustomerDAO cm = new CustomerDAO();
                         if(cm.Login(c))
-                            response.sendRedirect("customer.jsp");
+                            {
+                              session.setAttribute("email", username);
+                            response.sendRedirect("customer.jsp");}
                         else
                             response.sendRedirect("LoginFailedAlert.jsp");
                     }

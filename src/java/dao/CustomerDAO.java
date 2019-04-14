@@ -7,7 +7,8 @@
 package dao;
 
 import dto.Customer;
-import dto.Shopkeeper;
+import dto.Item;
+import dto.NewOrders;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -71,7 +72,92 @@ public class CustomerDAO {
         
         return b;
     }
-
+     public Customer getCustomerData(String email)
+    {
+         Configuration config =  new Configuration();
+          config.configure();
+          
+          SessionFactory sf = config.buildSessionFactory();
+          
+          Session s = sf.openSession();
+          
+          Transaction tr = s.beginTransaction();
+          
+          String hql = "FROM Customer WHERE email = :email";
+            Query query = s.createQuery(hql);
+            query.setParameter("email", email);
+           List<Customer> cmlist = query.list();
+        
+        Customer cm1 = new Customer();
+         if(cmlist.size() > 0) 
+        for(Customer cm :cmlist)
+        {
+           cm1 = cm;
+        }
+         tr.commit();
+        s.close();
+        sf.close();
+        
+         if(cm1 != null)
+         return cm1;
+         
+         else return null;
+        
+        
+    }
+     public List<Item> searchItem(String item)
+     {
+         Configuration config =  new Configuration();
+          config.configure();
+          
+          SessionFactory sf = config.buildSessionFactory();
+          
+          Session s = sf.openSession();
+          
+          Transaction tr = s.beginTransaction();
+          
+          String hql = "FROM Item WHERE itemname = :item";
+            Query query = s.createQuery(hql);
+            query.setParameter("item", item);
+           List<Item> ilist = query.list();
+           
+    //        tr.commit();
+    //    s.close();
+ //       sf.close();
+        
+        
+        Customer cm1 = new Customer();
+         if(ilist.size() > 0) 
+             return ilist;
+          else return null;
+        
+        
+        
+     }
+     
+     public boolean placeOrder(NewOrders o){
+    
+        Configuration config =  new Configuration();
+          config.configure();
+          
+          SessionFactory sf = config.buildSessionFactory();
+          
+          Session s = sf.openSession();
+          
+          Transaction tr = s.beginTransaction();
+          try{
+          s.save(o);
+          
+          tr.commit();
+          s.close();
+          sf.close();
+          
+          return true;}
+          
+          catch(Exception e){
+                return false;
+          }
+    }
     
 }
 

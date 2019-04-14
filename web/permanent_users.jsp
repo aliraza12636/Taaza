@@ -21,7 +21,7 @@
 
 <html lang="en">
 	<head>
-		<title>Shop Homepage</title>
+		<title>Permanent Customers</title>
 
 		<link href='./css/bootstrap.css' rel='stylesheet'/>
 		<link href='./css/style1.css' rel='stylesheet' />
@@ -82,9 +82,11 @@
 				</br>
 					<center>
 					<table class ='table' id = 'mytable' border = '1'>
-						<th>Name</th>
-						<th>unit</th>
-						<th>Price per unit</th>
+						<th>Name Of Customer</th>
+                                                <th>Items</th>
+						<th>Quantity</th>
+						<th>Amount Per Month</th>
+                                                <th>Customer Details</th>
 						<!-- modify using js-->
 						<tr>
 							
@@ -178,14 +180,13 @@
             
                 Item ai = new Item();
               
-                uid = s.getEmail() ;
+                uid = "sgdd" ;
                 ai.setEmail(uid);
                 
-               shop_name = s.getShop_name();
+               shop_name = "akkshop";
                 ai.setShop_name(shop_name);
                 
                 itemname = request.getParameter("itemname");
-                itemname = itemname.toUpperCase();
                 ai.setItemname(itemname);
                 
                 prize = request.getParameter("prize");

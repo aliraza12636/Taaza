@@ -51,9 +51,10 @@
    min-height:80px;
    background-color:orange;
  }
- #mybtn
+ #mybtn a
  {
 	font-weight:bold;
+        color:#333;
 	
  }
  #mybadge
@@ -65,8 +66,11 @@
  #signoutbtn
  {
    font-weight:bold;
+    width: 15%;
+    
+    color: white;
    font-size:20px;
-   margin:5px 20px 5px 100px;
+   margin:5px 20px 5px 80px;
  }
  .form-left-to-w3l input[type="text"], .form-left-to-w3l input[type="password"], .form-right-w3ls input[type="password"], .form-right-w3ls input[type="email"] {
 width: 100%;
@@ -114,7 +118,7 @@ margin: 20px 0px 0px;
  {
    font-weight:bold;
    font-size:20px;
-   margin:5px 20px 5px 40px;
+   margin:5px 20px 5px 30px;
  }
  #menuulcust li a
  {

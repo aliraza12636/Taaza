@@ -8,6 +8,10 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>controller.Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PlaceTheOrder</servlet-name>
+        <servlet-class>controller.PlaceTheOrder</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUpShopkeeper</servlet-name>
         <url-pattern>/SignUpShopkeeper</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PlaceTheOrder</servlet-name>
+        <url-pattern>/PlaceTheOrder</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

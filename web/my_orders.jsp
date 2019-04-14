@@ -5,7 +5,24 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="dto.Item"%>
+<%@page import="dto.Customer"%>
+<%@page import="dao.CustomerDAO"%>
 <!DOCTYPE html>
+
+<%
+         String uid1 ;
+         uid1=   (String)  session.getAttribute("email");
+         if(uid1== null)
+          {
+            response.sendRedirect("index.jsp");
+          }
+          CustomerDAO cm1 = new CustomerDAO();
+          Customer c = cm1.getCustomerData(uid1);
+          session.setAttribute("sobj", c);
+    
+    
+%>
 <html>
 	<head>
 		<title>My orders</title>
@@ -29,7 +46,7 @@
 				<div class='col-sm-8'>
 				<center>
 					<h1>Welcome to taaza</h1>
-						<h4>name of customer</h4>
+						<h4><%=c.getName() %></h4>
 				</center>
 				</div> 
 				
@@ -46,7 +63,7 @@
 						<li><a href='my_orders.jsp'>My Orders</a></li>
 						<li><a href='subscriptions.jsp'>Subscriptions</a></li>
 					</ul>
-					<button class='btn btn-default' id ='signoutbtn'>Sign Out</button>
+					<FORM action="signout.jsp" method="post"><button type='submit' class='btn btn-default' id ='signoutbtn'>Sign Out</button></FORM>
 				</div>
 			</div>
 			

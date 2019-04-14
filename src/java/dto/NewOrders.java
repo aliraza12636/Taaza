@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package dto;
-
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,28 +16,15 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Amit
+ * @author Ali Raza
  */
 @Entity
-@Table(name = "item")
-public class Item {
- 
+@Table(name = "orders")
+public class NewOrders {
     
-     @Column (name = "email")
-    private String email;
-  
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
      private int id;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-    
     
     @Column (name = "itemname")
     private String itemname;
@@ -50,26 +35,24 @@ public class Item {
     @Column (name = "quantity")
     private String quantity;
     
-    @Column (name = "shop_name")
-    private String shop_name;
+    @Column (name = "total")
+    private int total;
+    
+    @Column (name = "status")
+    private String status;
+    
+    @Column (name = "c_id")
+    private String c_id;
+    
+    @Column (name = "s_id")
+    private String s_id;
 
-    public String getShop_name() {
-        return shop_name;
+    public int getId() {
+        return id;
     }
 
-    public void setShop_name(String shop_name) {
-        this.shop_name = shop_name;
-    }
-
-    public Item() {
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getItemname() {
@@ -95,6 +78,39 @@ public class Item {
     public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
-    
 
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getC_id() {
+        return c_id;
+    }
+
+    public void setC_id(String c_id) {
+        this.c_id = c_id;
+    }
+
+    public String getS_id() {
+        return s_id;
+    }
+
+    public void setS_id(String s_id) {
+        this.s_id = s_id;
+    }
+    
+    
+    
 }
