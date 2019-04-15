@@ -9,6 +9,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="dto.Item"%>
 <%@page import="dto.Customer"%>
+<%@page import="dto.Shopkeeper"%>
 <%@page import="dto.NewOrders"%>
 <%@page import="dao.CustomerDAO"%>
 <%@page import="dao.ShopkeeperDAO"%>
@@ -24,6 +25,8 @@
           CustomerDAO cm1 = new CustomerDAO();
           Customer c = cm1.getCustomerData(uid1);
           session.setAttribute("sobj", c);
+          Shopkeeper s = (Shopkeeper)session.getAttribute("shopkeeper");
+          ShopkeeperDAO sdao = new ShopkeeperDAO();
           NewOrders or = new NewOrders();
              
     
@@ -82,49 +85,34 @@
 				
 				</br>
 					<center>
-					<form method = 'post' action=''>
-					<lable id = 'lab'>Enter an Item to search :&nbsp;</lable>
-						<input type = 'text' id = 'itemname' name='item' required /></br></br>
-						<button class='btn btn-search' id ='mybtn'>Search</button>
-						</form>
-					<%
-                                            String item = request.getParameter("item");
-                                            if(item != null)
-                                                session.setAttribute("item", item);
-                                                
-                                            if(session.getAttribute("item") !=null)
-                                            {
-                                                item = (String) session.getAttribute("item");
-                                                item = item.toUpperCase();
-                                                List<Item> ilist = new ArrayList<Item>();
-                                                ilist = cm1.searchItem(item);
-                                                if(ilist == null)
-                                                {
-                                                %>
-                                                </br></br>
-                                                <h3><%=item%> is not available anywhere</h3>
-                                                <%
-                                                }
-                                           else
-{
-                                        %>
+					
+					
 						</br>
-                                                <h3>Search results for <%=item%></h3></br>
-					<table class ='table' id = 'mytable' border = '1'>
-						<th>shop Name</th>
-						<th>unit</th>
-						<th>Price per unit (Rs.)</th>
-                                                <th>Quantity</th>
+                                                <h3>Your in <%=s.getShop_name() %></h3></br>
+					
 						
 						
                                                 <% 
                                                     int n = 0;
                                                     String temp = "hid";
                                                     String qtt ="quantity";
+                                                    
+                                                
+                                           
+                                                List<Item> ilist = new ArrayList<Item>();
+                                                ilist = sdao.getItemList(s.getEmail());
+                                               if(ilist != null)
+                                               {%>
+                                                <table class ='table' id = 'mytable' border = '1'>
+						<th>Item</th>
+						<th>Price per unit (Rs.)</th>
+                                                <th>Quantity</th>
+                                                
+                                                <%
                                                     session.setAttribute("mylist", ilist);
                                                     for(Item it : ilist)
                                                     {
-                                                %><tr><td><%=it.getShop_name() %></td><td><%=it.getQuantity() %></td><td><%=it.getPrize() %></td>
+                                                %><tr><td><%=it.getItemname() %></td><td><%=it.getPrize() %></td>
                                                     <td>
                                                         <form action="PlaceTheOrder" method="post">
                                                             <input type="hidden" value="<%=n%>"  name="<%=temp+n%>">
@@ -138,9 +126,10 @@
                                                    
                                                     }
                                                     
-
-                                                }
 }
+                                              else
+                                                {%><h5>Nothing is selling here</h5><%}
+
                                                 %>
 					</table>
                                          

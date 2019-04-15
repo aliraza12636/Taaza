@@ -72,6 +72,30 @@
    font-size:20px;
    margin:5px 20px 5px 80px;
  }
+ #obtn
+ {
+   font-weight:bold;
+    width: 40%;
+    
+    color: white;
+   font-size:20px;
+   margin:5px 20px 5px 20px;
+   
+ }
+ #mybtn7
+ {
+   font-weight:bold;
+    width: 90%;
+    
+    color: white;
+   font-size:20px;
+   margin:5px 20px 5px 20px;
+   
+ }
+ #qtb
+ {
+    width: 15%;
+ }
  .form-left-to-w3l input[type="text"], .form-left-to-w3l input[type="password"], .form-right-w3ls input[type="password"], .form-right-w3ls input[type="email"] {
 width: 100%;
 color: #000;

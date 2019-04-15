@@ -29,8 +29,8 @@ public class NewOrders {
     @Column (name = "itemname")
     private String itemname;
       
-    @Column (name = "prize")
-    private String prize;
+    @Column (name = "price")
+    private String price;
    
     @Column (name = "quantity")
     private String quantity;
@@ -63,13 +63,15 @@ public class NewOrders {
         this.itemname = itemname;
     }
 
-    public String getPrize() {
-        return prize;
+    public String getPrice() {
+        return price;
     }
 
-    public void setPrize(String prize) {
-        this.prize = prize;
+    public void setPrice(String price) {
+        this.price = price;
     }
+
+ 
 
     public String getQuantity() {
         return quantity;

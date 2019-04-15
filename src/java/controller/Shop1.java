@@ -7,6 +7,7 @@ package controller;
 
 import dao.CustomerDAO;
 import dao.ShopkeeperDAO;
+import dto.Shopkeeper;
 import dto.Item;
 import dto.NewOrders;
 import java.io.IOException;
@@ -22,7 +23,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Ali Raza
  */
-public class PlaceTheOrder extends HttpServlet {
+public class Shop1 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,7 +37,7 @@ public class PlaceTheOrder extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+         PrintWriter out = response.getWriter();
         try  {
                                             String i = null;
                                             for(int j = 0 ; j>=0 ; j++)
@@ -46,52 +47,29 @@ public class PlaceTheOrder extends HttpServlet {
                                                     break;
                                             }
                                             int index = Integer.parseInt(i);
-                                            String quantity = request.getParameter("quantity"+index);
+                                            
                                             HttpSession session = request.getSession(false);
-                                            if(quantity !=null)
-                                            {
+                                            out.println(index);
                                                 ShopkeeperDAO sdao = new ShopkeeperDAO();
-                                                CustomerDAO cdao = new CustomerDAO();
-                                                List<Item> ilist = (List<Item>)session.getAttribute("mylist");
-                                                Item it = ilist.get(index);
+                                               CustomerDAO cdao = new CustomerDAO();
+                                                List<Shopkeeper> slist = (List<Shopkeeper>)session.getAttribute("slist");
+                                               Shopkeeper s = slist.get(index);
                                                 
-                                                NewOrders or = new NewOrders();
-                                                
-                                           
-                                                or.setC_id((String)session.getAttribute("email"));
-                                                or.setS_id(it.getShop_name());
-                                                or.setItemname(it.getItemname());
-                                                or.setPrice(it.getPrize());
-                                                or.setQuantity(quantity);
-                                                or.setStatus("Pending");
-                                                or.setTotal(Integer.parseInt(it.getPrize()) * Integer.parseInt(quantity));
-                                                
-                                                boolean b = cdao.placeOrder(or);
-                                                if(b)
-                                                {
-                                                    sdao.newOrders(it.getEmail(), 1);
-                                                    session.setAttribute("mylist", null);
-                                                session.setAttribute("orderstatus", "success");
-                                                   response.sendRedirect("my_orders.jsp");
+                                               
+                                              
+                                                    
+                                               session.setAttribute("shopkeeper", s);
+                                                  response.sendRedirect("shop1.jsp");
                                                     
                                                    
-                                                }
-                                                else
-                                                    {
-                                                 session.setAttribute("orderstatus", "success");
-                                                  response.sendRedirect("near_by_shops.jsp");
-                                                  
-                                                }
                                                
                                                    
-                                            }
-                        
+                                         
         }
          catch(Exception e)
          {
              out.println(e);
          }
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

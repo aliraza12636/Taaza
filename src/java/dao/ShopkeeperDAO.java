@@ -187,6 +187,33 @@ public class ShopkeeperDAO {
           
           
     }
-              
+              public List<Item> getItemList(String email)
+    {
+         Configuration config =  new Configuration();
+          config.configure();
+          
+          SessionFactory sf = config.buildSessionFactory();
+          
+          Session s = sf.openSession();
+          
+          Transaction tr = s.beginTransaction();
+          
+          String hql = "FROM Item WHERE email = :email";
+            Query query = s.createQuery(hql);
+            query.setParameter("email", email);
+           List<Item> ilist = query.list();
+        
+        
+    //        tr.commit();
+    //    s.close();
+ //       sf.close();
+        
+        
+        
+         if(ilist.size() > 0) 
+             return ilist;
+          else return null;
+    }
+    
 }
 

@@ -12,5 +12,6 @@
     <mapping class="dto.Shopkeeper"/>
     <mapping class="dto.Customer"/>
     <mapping class="dto.Item"/>
+    <mapping class="dto.NewOrders"/>
   </session-factory>
 </hibernate-configuration>

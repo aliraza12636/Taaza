@@ -4,6 +4,9 @@
     Author     : Ali Raza
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="dto.Shopkeeper"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="dto.Item"%>
 <%@page import="dto.Customer"%>
@@ -61,7 +64,7 @@
 						<li><a href='customer.jsp'>Search for an Item</a></li>
 						<li><a href='near_by_shops.jsp'>Near by Shops</a></li>
 						<li><a href='my_orders.jsp'>My Orders</a></li>
-						<li><a href='subscriptions.jsp'>Subscriptions</a></li>
+					<!--	<li><a href='subscriptions.jsp'>Subscriptions</a></li> -->
 					</ul>
 					<FORM action="signout.jsp" method="post"><button type='submit' class='btn btn-default' id ='signoutbtn'>Sign Out</button></FORM>
 				</div>
@@ -72,27 +75,69 @@
 				
 				</br>
 					<center>
-					<form method = 'post' action=''>
+					<form method = 'post' action='near_by_shops.jsp'>
 					<label >
-							choose your Landmark:  &nbsp;</lable><select class="input select" name="city">
-								<option>  --select-- </option>
-								
+							choose your Landmark:  &nbsp;</lable><select class="input select" name="lm">
+                                                         <option >  --select-- </option>
+                                            <% 
+                                                List<Shopkeeper> slist = new  ArrayList<Shopkeeper>();
+                                                slist = cm1.getLandMarkList();
+                                                for(Shopkeeper s : slist)
+                                                {
+                                            %>
+								<option>  <%=s.getLandmark() %> </option>
+                                            <%  }	%>	
 							</select>
 							
 						</br></br>
 						<button class='btn btn-search' id ='mybtn'>Search</button>
 						</form>
-						
-						<!--
-					<table class ='table' id = 'mytable' border = '1'>
+                                                        
+                                                        
+						<%
+                                           String lm = request.getParameter("lm");
+                                           if(lm != null)
+                                               session.setAttribute("lm", lm);
+                                                
+                                           if(session.getAttribute("lm") !=null)
+                                            {
+                                                %>
+                                                <br/>
+                                                <h3>Shops around you</h3></br>
+                                                <table class ='table' id = 'mytable' border = '1'>
 						<th>shop Name</th>
-						<th>unit</th>
-						<th>Price per unit</th>
-						 modify using js
-						<tr>
-							
-						</tr>
-					</table> -->
+						<th>Honer Name</th>
+						<th>Visit</th>
+                                                <%
+                                                lm = (String) session.getAttribute("lm");
+                                                     int n = 0;
+                                                    String temp = "hid";
+                                                    session.setAttribute("slist", slist);
+                                                for(Shopkeeper s : slist)
+                                                {
+                                                    if(lm.equals(s.getLandmark()))
+                                                    {
+                                                       %>
+                                                            <tr>
+                                                                <td><%=s.getShop_name()%></td>
+                                                                <td><%=s.getName() %></td>
+                                                                <td>
+                                                                    <form action="Shop1" method="post">
+                                                                    <input type="hidden" value="<%=n%>"  name="<%=temp+n%>">
+                                                                        <button class='btn btn-primary' id ='mybtn7' type="submit">Visit Shop</button>
+                                                                    </form>
+                                                                    
+                                                                </td>
+                                                            </tr>
+                                                        <%
+                                                    }
+                                                    n++;
+                                                }
+                                            
+                                            }
+                                        %>
+						
+				
 					</center>
 				</div>
 				

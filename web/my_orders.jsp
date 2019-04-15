@@ -4,6 +4,9 @@
     Author     : Ali Raza
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="dto.NewOrders"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="dto.Item"%>
 <%@page import="dto.Customer"%>
@@ -61,7 +64,7 @@
 						<li><a href='customer.jsp'>Search for an Item</a></li>
 						<li><a href='near_by_shops.jsp'>Near by Shops</a></li>
 						<li><a href='my_orders.jsp'>My Orders</a></li>
-						<li><a href='subscriptions.jsp'>Subscriptions</a></li>
+						<!--<li><a href='subscriptions.jsp'>Subscriptions</a></li>-->
 					</ul>
 					<FORM action="signout.jsp" method="post"><button type='submit' class='btn btn-default' id ='signoutbtn'>Sign Out</button></FORM>
 				</div>
@@ -73,17 +76,25 @@
 				</br>
 					<center>
 					
-						
+						<h3>Your Placed Orders</h3></br>
 						
 					<table class ='table' id = 'mytable' border = '1'>
 						<th>Item From</th>
 						<th>Item Name</th>
 						<th>Quantity</th>
-						<th>Amount to pay</th>
+						<th>Amount to pay(Rs.)</th>
 						<th>Status</th>
-						 modify using jsp
-						<tr>
-							
+						 <%
+                                                            List<NewOrders> olist = new  ArrayList<NewOrders>();
+                                                            olist = cm1.getOrderList(uid1);
+                                                            
+                                                            for(NewOrders no : olist)
+                                                            {
+                                                 %>
+                                                    <tr>
+							<td><%=no.getS_id()%></td><td><%=no.getItemname() %></td><td><%=no.getQuantity() %></td><td><%=no.getTotal() %></td><td><%=no.getStatus() %></td>
+                                                      </tr>  
+                                                         <% } %>
 						</tr>
 					</table>
 					</center>

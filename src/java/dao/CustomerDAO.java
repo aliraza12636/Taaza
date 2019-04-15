@@ -7,6 +7,7 @@
 package dao;
 
 import dto.Customer;
+import dto.Shopkeeper;
 import dto.Item;
 import dto.NewOrders;
 import java.util.List;
@@ -126,7 +127,7 @@ public class CustomerDAO {
  //       sf.close();
         
         
-        Customer cm1 = new Customer();
+       
          if(ilist.size() > 0) 
              return ilist;
           else return null;
@@ -158,7 +159,66 @@ public class CustomerDAO {
                 return false;
           }
     }
+     
+      public List<NewOrders> getOrderList(String email)
+     {
+         Configuration config =  new Configuration();
+          config.configure();
+          
+          SessionFactory sf = config.buildSessionFactory();
+          
+          Session s = sf.openSession();
+          
+          Transaction tr = s.beginTransaction();
+          
+          String hql = "FROM NewOrders WHERE c_id = :email";
+            Query query = s.createQuery(hql);
+            query.setParameter("email", email);
+           List<NewOrders> olist = query.list();
+           
+    //        tr.commit();
+    //    s.close();
+ //       sf.close();
+        
+        
+        
+         if(olist.size() > 0) 
+             return olist;
+          else return null;
+        
+        
+        
+     }
     
+       public List<Shopkeeper> getLandMarkList()
+     {
+         Configuration config =  new Configuration();
+          config.configure();
+          
+          SessionFactory sf = config.buildSessionFactory();
+          
+          Session s = sf.openSession();
+          
+          Transaction tr = s.beginTransaction();
+          
+          String hql = "FROM Shopkeeper";
+            Query query = s.createQuery(hql);
+           
+           List<Shopkeeper> llist = query.list();
+           
+    //        tr.commit();
+    //    s.close();
+ //       sf.close();
+        
+        
+        
+         if(llist.size() > 0) 
+             return llist;
+          else return null;
+        
+        
+        
+     }
 }
 
     
